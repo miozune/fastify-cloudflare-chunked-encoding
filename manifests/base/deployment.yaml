@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastify-cloudflare-chunked-encoding
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: fastify-cloudflare-chunked-encoding
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: fastify-cloudflare-chunked-encoding
+    spec:
+      containers:
+      - name: fastify-cloudflare-chunked-encoding
+        image: ghcr.io/miozune/fastify-cloudflare-chunked-encoding:0.0.1

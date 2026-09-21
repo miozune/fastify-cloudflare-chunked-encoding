@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fastify-cloudflare-chunked-encoding
+spec:
+  selector:
+    app.kubernetes.io/name: fastify-cloudflare-chunked-encoding
+  ports:
+  - port: 3000

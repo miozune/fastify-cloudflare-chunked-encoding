@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: fastify-cloudflare-chunked-encoding
+spec:
+  ingressClassName: cloudflare-tunnel
+  rules:
+  - host: example.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: fastify-cloudflare-chunked-encoding
+            port:
+              number: 3000
